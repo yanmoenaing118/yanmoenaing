@@ -1,0 +1,5 @@
+.section {
+    &__intro {
+        height: calc(100vh - #{$header-height});
+    }
+}

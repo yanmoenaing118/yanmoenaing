@@ -1,5 +1,5 @@
 // $font-family: "Numans","Nunito Sans", "Bentham", "Numans", "Nunito", "Oleo Script", "Lato";
-@import url('https://fonts.googleapis.com/css2?family=Bentham&family=Lato:wght@300;400&family=Numans&family=Nunito+Sans:wght@800&family=Nunito:ital,wght@1,800&family=Oleo+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bentham&family=Lato:wght@300;400&family=Numans&family=Nunito+Sans:wght@800&family=Nunito:wght@800&family=Oleo+Script&display=swap');
 
 $font-numans: "Numans", sans-serif;
 $font-nunioto-sans: "Nunito Sans", sans-serif;
@@ -20,6 +20,9 @@ $text-6a6a6a: #6A6A6A;
 $text-3a3434: #3A3434;
 $text-686868: #686868;
 $text-743737: #743737;
+
+$bg-F7F6F6: #F7F6F6;
+$bg-743737: #743737;
 
 $white: #fff;
 $primary: #31F8BD;
@@ -55,4 +58,10 @@ body {
     width: min(100%, $max-width);
     padding: 0 $gap;
     margin: 0 auto;
+}
+
+button {
+    border: none;
+    background: none;
+    outline: none;
 }
