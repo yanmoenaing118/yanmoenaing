@@ -6,37 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yan Moe Naing - Frontend Developer</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-    <header>
-        <div class="container header">
-            <a href="/" class="header__logo">webdev</a>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="/">home</a>
-                    </li>
-                    <li>
-                        <a href="#about">About</a>
-                    </li>
-                    <li>
-                        <a href="#projects">Projects</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
     <main>
-        <section class="section__intro">
+
+        <section class="section section__intro">
+            <header>
+                <div class="container header">
+                    <a href="/" class="header__logo">webdev</a>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="/">home</a>
+                            </li>
+                            <li>
+                                <a href="#about">About</a>
+                            </li>
+                            <li>
+                                <a href="#projects">Projects</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </header>
             <div class="container intro">
                 <h1 class="intro__title">Hi, I'm <span> Yan Moe Naing.</span></h1>
                 <p class="intro__desc">
-                    I'm a dedicated frontend developer.<br /> I imagine things, research things and create things <br />
-                    by
-                    writing code.
+                    I'm a dedicated frontend developer.<br />
+                    I imagine things, research things and create things <br />
+                    by writing code.
                 </p>
                 <div class="intro__ca">
                     <button>Contact Me</button>
@@ -44,6 +44,46 @@
             </div>
 
             <div class="container intro__bars"></div>
+        </section>
+        <section class="section section__projects">
+            <div class="container projects">
+                <div class="section__title">
+                    <div class="navigate-page navigate-page__back">
+                        Home
+                    </div>
+                    <h1>recent works</h1>
+                </div>
+                <div class="projects__list">
+                    <div class="project">
+                        <div class="project__img">
+                            <img src="https://yanmoenaing118.github.io/assets/olive-go.jpg"
+                                alt="Olive Go - Home Improvement" loading="lazy">
+
+                        </div>
+                        <h2 class="project__title">Olive Go - Home Improvement</h2>
+                        <a class="project__url" href="https://olivego.com">https://olivego.com</a>
+                        <p class="project__about">
+                            Customers will be able to shop from anywhere across the nation for a full range of home
+                            improvement products with installation, repair, and maintenance services that complement
+                            every product available on the platform.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="navigation">
+                    <div class="project__navigation">
+                        <button class="project__navigation-btn">&lsaquo;</button>
+                        <span>1 / 5</span>
+                        <button class="project__navigation-btn">&rsaquo;</button>
+                    </div>
+
+                    <div class="navigation__page">
+                        <div class="navigate-page navigate-page__down">
+                            Contact
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 </body>

@@ -1,0 +1,69 @@
+.projects {
+    &__list {
+        padding-top: 8.5rem;
+    }
+}
+
+
+.project {
+    font-family: $font-lato;
+
+    &__title {
+        font-family: $font-oleo;
+        font-weight: normal;
+        color: $text-3a3434;
+        font-size: 3rem;
+        margin-top: 2.4rem;
+    }
+
+    &__url {
+        font-size: 2rem;
+        color: $text-6a6a6a;
+        display: block;
+        margin-bottom: 2rem;
+    }
+
+    &__img {
+        width: 180px;
+        height: 180px;
+        background-color: $white;
+        box-shadow: $sh;
+        border-radius: 4px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__about {
+        max-width: 680px;
+        line-height: 1.7;
+        font-size: 1.9rem;
+        font-weight: 300;
+        color: $text-3a3434;
+    }
+
+    &__navigation {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        &-btn {
+            width: 40px;
+            height: 40px;
+            display: block;
+            border-radius: 50%;
+            background-color: #f0f0f3;
+            box-shadow: 10px 10px 10px rgba($white, 0.1);
+            font-size: 2.5rem;
+            @include flex-center(center);
+            color: $text-686868;
+            padding-bottom: .3rem;
+        }
+
+
+
+    }
+}

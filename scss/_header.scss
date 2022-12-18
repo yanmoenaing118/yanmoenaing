@@ -1,7 +1,12 @@
+header {
+    background-color: $white;
+    
+}
+
 .header {
     height: $header-height;
-    background-color: $white;
-    padding: 0 $gap;
+
+
     
     @include flex-center;
     &__logo {

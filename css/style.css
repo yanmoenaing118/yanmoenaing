@@ -31,10 +31,12 @@ button {
   outline: none;
 }
 
+header {
+  background-color: #fff;
+}
+
 .header {
   height: 78px;
-  background-color: #fff;
-  padding: 0 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -69,8 +71,32 @@ button {
   text-transform: lowercase;
 }
 
+main {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.section {
+  background-color: #fff;
+  scroll-snap-align: start;
+}
+.section__title {
+  height: calc(22px + 78px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.section__title h1 {
+  font-family: "Numans", sans-serif;
+  font-size: 3.2rem;
+  text-align: right;
+}
 .section__intro {
-  height: calc(100vh - 78px);
+  height: 100vh;
+}
+.section__projects {
+  height: 100vh;
 }
 
 .intro {
@@ -78,7 +104,7 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 82%;
+  height: calc(100% - 78px - 14%);
   background-color: #fff;
   text-align: center;
 }
@@ -137,6 +163,100 @@ button {
   width: 120px;
   height: 4px;
   margin-left: 16px;
+}
+
+.projects__list {
+  padding-top: 8.5rem;
+}
+
+.project {
+  font-family: "Lato", sans-serif;
+}
+.project__title {
+  font-family: "Oleo Script", cursive;
+  font-weight: normal;
+  color: #3A3434;
+  font-size: 3rem;
+  margin-top: 2.4rem;
+}
+.project__url {
+  font-size: 2rem;
+  color: #6A6A6A;
+  display: block;
+  margin-bottom: 2rem;
+}
+.project__img {
+  width: 180px;
+  height: 180px;
+  background-color: #fff;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.project__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.project__about {
+  max-width: 680px;
+  line-height: 1.7;
+  font-size: 1.9rem;
+  font-weight: 300;
+  color: #3A3434;
+}
+.project__navigation {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.project__navigation-btn {
+  width: 40px;
+  height: 40px;
+  display: block;
+  border-radius: 50%;
+  background-color: #f0f0f3;
+  box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.1);
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #686868;
+  padding-bottom: 0.3rem;
+}
+
+.navigation {
+  margin-top: 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navigate-page {
+  font-size: 1.9rem;
+}
+.navigate-page__down {
+  transform: rotate(90deg);
+  position: relative;
+}
+.navigate-page__down::after {
+  content: url(../assets/arrow.svg);
+  position: absolute;
+  top: 0;
+  right: 0;
+  right: -50px;
+}
+.navigate-page__back {
+  position: relative;
+  padding-left: 46px;
+  display: flex;
+  align-items: center;
+}
+.navigate-page__back::before {
+  content: url(../assets/arrow.svg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(3px) rotate(-180deg);
 }
 
 /*# sourceMappingURL=style.css.map */

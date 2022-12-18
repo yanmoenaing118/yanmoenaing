@@ -1,7 +1,7 @@
 .intro {
     @include flex-center(center);
     flex-direction: column;
-    height: 82%;
+    height: calc(100% - #{$header-height} - 14%);
     background-color: $white;
     text-align: center;
 

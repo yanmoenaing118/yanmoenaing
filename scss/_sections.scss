@@ -1,5 +1,29 @@
+main {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
 .section {
-    &__intro {
-        height: calc(100vh - #{$header-height});
+  background-color: $white;
+  scroll-snap-align: start;
+
+  &__title {
+    height: calc(22px + #{$header-height});
+    @include flex-center(space-between);
+
+    h1 {
+      font-family: $font-numans;
+      font-size: 3.2rem;
+      text-align: right;
     }
+  }
+
+  &__intro {
+    height: 100vh;
+  }
+
+  &__projects {
+    height: 100vh;
+  }
 }

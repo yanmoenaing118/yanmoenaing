@@ -1,0 +1,38 @@
+.navigation {
+    margin-top: 10rem;
+    @include flex-center(space-between);
+    &__page {
+
+    }
+}
+
+.navigate-page {
+
+    font-size: 1.9rem;
+    
+
+    &__down {
+        transform: rotate(90deg);
+        position: relative;
+
+        &::after {
+            content: url(../assets/arrow.svg);
+            @include corner-absolute(top, right);
+            right: -50px;
+        }
+    }
+
+    &__back {
+    
+        position: relative;
+        padding-left: 46px;
+        display: flex;
+        align-items: center;
+
+        &::before {
+            content: url(../assets/arrow.svg);
+            @include corner-absolute(top, left);
+            transform: translateY(3px) rotate(-180deg);
+        }
+    }
+}
