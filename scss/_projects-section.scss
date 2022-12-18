@@ -1,6 +1,6 @@
 .projects {
     &__list {
-        padding-top: 8.5rem;
+        height: 58vh;
     }
 }
 
@@ -44,6 +44,10 @@
         font-size: 1.9rem;
         font-weight: 300;
         color: $text-3a3434;
+    }
+
+    &__tech {
+        margin-top: 3rem;
     }
 
     &__navigation {

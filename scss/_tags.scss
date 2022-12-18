@@ -1,0 +1,22 @@
+.tag {
+    &__list {}
+    &__item {
+        box-shadow: $sh;
+        display: inline-block;
+        padding: .4em .8em;
+        border-left: 2px solid $white;
+        &:not(:last-child) {
+            margin-right: 1rem;
+        }
+
+        &--success {
+            border-color: rgb(13, 201, 13);
+        }
+        &--info {
+            border-color: rgb(29, 236, 236);
+        }
+        &--indigo {
+            border-color: indigo;
+        }
+    }
+}

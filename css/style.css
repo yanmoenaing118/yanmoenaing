@@ -91,7 +91,7 @@ main {
   font-family: "Numans", sans-serif;
   font-size: 3.2rem;
   text-align: right;
-  text-transform: lowercase;
+  text-transform: uppercase;
 }
 .section__intro {
   height: 100vh;
@@ -170,7 +170,7 @@ main {
 }
 
 .projects__list {
-  padding-top: 8.5rem;
+  height: 58vh;
 }
 
 .project {
@@ -208,6 +208,9 @@ main {
   font-size: 1.9rem;
   font-weight: 300;
   color: #3A3434;
+}
+.project__tech {
+  margin-top: 3rem;
 }
 .project__navigation {
   display: flex;
@@ -322,6 +325,25 @@ main {
   width: 120px;
   height: 4px;
   margin-left: 16px;
+}
+
+.tag__item {
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
+  display: inline-block;
+  padding: 0.4em 0.8em;
+  border-left: 2px solid #fff;
+}
+.tag__item:not(:last-child) {
+  margin-right: 1rem;
+}
+.tag__item--success {
+  border-color: rgb(13, 201, 13);
+}
+.tag__item--info {
+  border-color: rgb(29, 236, 236);
+}
+.tag__item--indigo {
+  border-color: indigo;
 }
 
 /*# sourceMappingURL=style.css.map */
