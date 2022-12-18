@@ -1,0 +1,66 @@
+.contact {
+  &__info {
+    height: 72vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__person {
+    width: 200px;
+    height: 200px;
+    background-color: $white;
+    border-radius: 50%;
+
+    margin-left: -2rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__name {
+    font-size: 4.9rem;
+    font-family: $font-nunito;
+    font-weight: normal;
+    margin-bottom: 2rem;
+  }
+
+  &__socials {
+    list-style: disc;
+    margin-left: 1.8rem;
+    li {
+      font-size: 1.9rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__bars {
+    $bar-height: 120px;
+    height: $bar-height;
+    position: relative;
+    transform: translateY(-50%);
+
+    &::before {
+      content: "";
+      display: table;
+      background-color: $text-743737;
+      @include corner-absolute(top, right);
+      height: $bar-height;
+      width: 4px;
+      margin-left: $gap;
+    }
+
+    &::after {
+      content: "";
+      display: table;
+      background-color: $text-743737;
+      @include corner-absolute(bottom, right);
+      width: $bar-height;
+      height: 4px;
+      margin-left: $gap;
+    }
+  }
+}

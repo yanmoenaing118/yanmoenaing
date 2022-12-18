@@ -91,11 +91,15 @@ main {
   font-family: "Numans", sans-serif;
   font-size: 3.2rem;
   text-align: right;
+  text-transform: lowercase;
 }
 .section__intro {
   height: 100vh;
 }
 .section__projects {
+  height: 100vh;
+}
+.section__contact {
   height: 100vh;
 }
 
@@ -231,6 +235,7 @@ main {
   justify-content: space-between;
   align-items: center;
 }
+
 .navigate-page {
   font-size: 1.9rem;
 }
@@ -257,6 +262,66 @@ main {
   top: 0;
   left: 0;
   transform: translateY(3px) rotate(-180deg);
+}
+
+.contact__info {
+  height: 72vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.contact__person {
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-left: -2rem;
+}
+.contact__person img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.contact__name {
+  font-size: 4.9rem;
+  font-family: "Nunito", sans-serif;
+  font-weight: normal;
+  margin-bottom: 2rem;
+}
+.contact__socials {
+  list-style: disc;
+  margin-left: 1.8rem;
+}
+.contact__socials li {
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
+}
+.contact__bars {
+  height: 120px;
+  position: relative;
+  transform: translateY(-50%);
+}
+.contact__bars::before {
+  content: "";
+  display: table;
+  background-color: #743737;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 120px;
+  width: 4px;
+  margin-left: 16px;
+}
+.contact__bars::after {
+  content: "";
+  display: table;
+  background-color: #743737;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 120px;
+  height: 4px;
+  margin-left: 16px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,9 +1,7 @@
 .navigation {
     margin-top: 10rem;
     @include flex-center(space-between);
-    &__page {
 
-    }
 }
 
 .navigate-page {
