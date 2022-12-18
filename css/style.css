@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Bentham&family=Lato:wght@300;400&family=Numans&family=Nunito+Sans:wght@800&family=Nunito:ital,wght@1,800&family=Oleo+Script&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: inherit;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1.6rem;
+  color: #6A6A6A;
+}
+
+.container {
+  width: min(100%, 1200px);
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+header {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.16);
+}
+
+.header {
+  height: 78px;
+  background-color: #fff;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  display: block;
+  font-family: "Numans", sans-serif;
+  font-size: 3.2rem;
+  position: relative;
+}
+.header__logo::after {
+  content: "";
+  display: block;
+  width: calc(100% + 18px);
+  height: 5px;
+  background-color: #31F8BD;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  left: 6px;
+}
+.header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 38px;
+}
+.header nav ul li a {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 2.1rem;
+  text-transform: lowercase;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,42 @@
+header {
+    box-shadow: $sh;
+}
+
+.header {
+    height: $header-height;
+    background-color: $white;
+    padding: 0 $gap;
+    
+    @include flex-center;
+    &__logo {
+        display: block;
+        font-family: $font-numans;
+        font-size: 3.2rem;
+        position: relative;
+        &::after {
+            content: "";
+            display: block;
+            width: calc(100% + 18px);
+            height: 5px;
+            background-color: $primary;
+            @include corner-absolute(bottom, left);
+            left: 6px;
+        }
+    }
+
+    nav {
+        ul {
+            list-style: none;
+            @include flex-center;
+            gap: 38px;
+
+            li {
+                a {
+                    font-family: $font-nunioto-sans;
+                    font-size: 2.1rem;
+                    text-transform: lowercase;
+                }
+            }
+        }
+    }
+}

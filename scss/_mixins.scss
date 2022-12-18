@@ -1,0 +1,11 @@
+@mixin flex-center($justify-content: space-between) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: center;
+}
+
+@mixin corner-absolute($top-or-bottom, $left-or-right) {
+    position: absolute;
+    #{$top-or-bottom}: 0;
+    #{$left-or-right}: 0;
+}
