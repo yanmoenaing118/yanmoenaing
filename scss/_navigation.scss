@@ -18,6 +18,14 @@
             content: url(../assets/arrow.svg);
             @include corner-absolute(top, right);
             right: -50px;
+            animation: moveDown .5s ease-in alternate infinite;
+
+        }
+
+        @keyframes moveDown {
+            to {
+                right: -68px;
+            }
         }
     }
 
@@ -42,6 +50,12 @@
             content: url(../assets/arrow.svg);
             @include corner-absolute(top, left);
             transform: translateX(calc(100% + 16px))  rotate(-360deg);
+            animation: moveUp .5s ease-in alternate infinite;
+        }
+        @keyframes moveUp {
+            to {
+                transform: translateX(calc(100% + 28px))  rotate(-360deg);
+            }
         }
     }
 

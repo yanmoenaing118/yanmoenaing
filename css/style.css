@@ -310,6 +310,12 @@ main {
   height: 100%;
   object-fit: contain;
 }
+@media screen and (max-width: 480px) {
+  .project__img {
+    width: 120px;
+    height: 120px;
+  }
+}
 .project__about {
   max-width: 680px;
   line-height: 1.7;
@@ -371,6 +377,12 @@ main {
   top: 0;
   right: 0;
   right: -50px;
+  animation: moveDown 0.5s ease-in alternate infinite;
+}
+@keyframes moveDown {
+  to {
+    right: -68px;
+  }
 }
 .navigate-page__back {
   position: relative;
@@ -395,6 +407,12 @@ main {
   top: 0;
   left: 0;
   transform: translateX(calc(100% + 16px)) rotate(-360deg);
+  animation: moveUp 0.5s ease-in alternate infinite;
+}
+@keyframes moveUp {
+  to {
+    transform: translateX(calc(100% + 28px)) rotate(-360deg);
+  }
 }
 @media screen and (max-width: 768px) {
   .navigate-page {
@@ -476,6 +494,7 @@ main {
 }
 .tag__item:not(:last-child) {
   margin-right: 1rem;
+  margin-bottom: 1rem;
 }
 .tag__item--success {
   border-color: rgb(13, 201, 13);
@@ -485,6 +504,38 @@ main {
 }
 .tag__item--indigo {
   border-color: indigo;
+}
+
+.b-color--green {
+  border-color: green;
+}
+
+.b-color--indigo {
+  border-color: indigo;
+}
+
+.b-color--cyan {
+  border-color: cyan;
+}
+
+.b-color--gold {
+  border-color: gold;
+}
+
+.b-color--blue {
+  border-color: blue;
+}
+
+.b-color--purple {
+  border-color: purple;
+}
+
+.b-color--lightgreen {
+  border-color: lightgreen;
+}
+
+.b-color--red {
+  border-color: red;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -12,14 +12,40 @@ const projects = [
       full range of home improvement products with installation, repair, and
       maintenance services that complement every product available on the
       platform.`,
-    approaches: [],
+    approaches: [
+      {
+        label: "NextJS",
+        color: "green",
+      },
+      {
+        label: "Styled JSX",
+        color: "indigo",
+      },
+      {
+        label: "SWR",
+        color: "cyan",
+      },
+    ],
   },
   {
     logo: "midas.png",
     projectName: "Midascreatives",
     projectLink: "https://midascreatives.com.mm/",
     projectBrief: `Midas Creatives is a creative agency which is established and founded in Singapore. They help companies grow business and revenue. They deliver strong branding identity through marketing communications across all media.`,
-    approaches: [],
+    approaches: [
+      {
+        label: "NextJS",
+        color: "green",
+      },
+      {
+        label: "Framer Motion",
+        color: "gold",
+      },
+      {
+        label: "Styled JSX",
+        color: "cyan",
+      },
+    ],
   },
   {
     logo: "player.ico",
@@ -28,7 +54,20 @@ const projects = [
     projectBrief: `A music player with beautifully animated particle effects. The
       lyric is translated into English.`,
     techBrief: `I created this player using React + Redux. Styled-componets is used for the styling.`,
-    approaches: [],
+    approaches: [
+      {
+        label: "React",
+        color: "blue",
+      },
+      {
+        label: "Redux ToolKit",
+        color: "purple",
+      },
+      {
+        label: "Styled Components",
+        color: "lightgreen",
+      },
+    ],
   },
 
   {
@@ -37,7 +76,46 @@ const projects = [
     projectLink: "https://venuslab-clone.vercel.app/",
     projectBrief: `This is the cloned website of https://venuslab.co.<br /> I created this website as part of the interview process when I applied for the job.`,
     techBrief: `NextJS - Styled Components`,
-    approaches: [],
+    approaches: [
+      {
+        label: "NextJS",
+        color: "green",
+      },
+      {
+        label: "Intersection Observer",
+        color: "gold",
+      },
+      {
+        label: "Styled Components",
+        color: "lightgreen",
+      },
+    ],
+  },
+
+  {
+    logo: "github.png",
+    projectName: "Github Account",
+    projectLink: "https://github.com/yanmoenaing118",
+    projectBrief: `Frontend Mentor Challenges, Website Inspiration and Rest API development.`,
+    techBrief: `JavaScript, TypeScript, SCSS, React, Vue, Angular`,
+    approaches: [
+      {
+        label: "React",
+        color: "cyan"
+      },
+      {
+        label: "Vue",
+        color: "green"
+      },
+      {
+        label: "Angular",
+        color: "red"
+      },
+      {
+        label: "Rest API",
+        color: "gold"
+      }
+    ],
   },
 
   {
@@ -62,6 +140,8 @@ function setUpProject() {
   const projectApproaches = document.createElement("div");
   const tags = document.createElement("div");
 
+  projectUrl.setAttribute("target", "_blank");
+
   return {
     state: {
       activeIndex: 0,
@@ -84,6 +164,7 @@ function setUpProject() {
       projectEl.appendChild(projectApproaches);
       projectsContainer.appendChild(projectEl);
 
+
       projectEl.classList.add("project");
       projectImgWrapper.classList.add("project__img");
       projectTitle.classList.add("project__title");
@@ -91,6 +172,15 @@ function setUpProject() {
       projectAbout.classList.add("project__about");
       projectApproaches.classList.add("project__tech");
       tags.classList.add("tag__list");
+      tags.innerHTML = '';
+
+      projects[this.state.activeIndex].approaches.forEach(({ label, color}) => {
+        const tagItem = document.createElement("div");
+        tagItem.textContent = label;
+        tagItem.classList.add("tag__item");
+        tagItem.classList.add(`b-color--${color}`);
+        tags.appendChild(tagItem);
+      })
 
       projectImg.src = "/assets/" + projects[this.state.activeIndex].logo;
       projectTitle.textContent = projects[this.state.activeIndex].projectName;
@@ -110,7 +200,7 @@ function setUpCount() {
       this.render();
     },
     render() {
-      count.textContent = `${this.current} / 5`;
+      count.textContent = `${this.current} / ${projects.length}`;
     },
   };
 }
@@ -153,7 +243,6 @@ nextBtn.addEventListener("click", () => {
 menuBtn.addEventListener("click", () => {
   mobileNav.classList.toggle("show");
   menuBtn.classList.toggle("active");
-
 });
 mobileNavLinks.forEach((el) => {
   el.addEventListener("click", () => {

@@ -6,6 +6,7 @@
         border-left: 2px solid $white;
         &:not(:last-child) {
             margin-right: 1rem;
+            margin-bottom: 1rem;
         }
 
         &--success {
@@ -17,5 +18,13 @@
         &--indigo {
             border-color: indigo;
         }
+    }
+}
+
+$border-colors: green, indigo, cyan, gold, blue, purple, lightgreen, red;
+
+@each $color in $border-colors {
+    .b-color--#{$color} {
+        border-color: $color;
     }
 }
