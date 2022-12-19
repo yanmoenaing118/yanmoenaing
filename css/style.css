@@ -181,14 +181,26 @@ main {
     font-size: 2rem;
   }
 }
+@media screen and (max-width: 480px) {
+  .section__title h1 {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .section__title {
+    height: 78px;
+  }
+}
 .section__intro {
   height: 100vh;
 }
 .section__projects {
   height: 100vh;
+  position: relative;
 }
 .section__contact {
   height: 100vh;
+  position: relative;
 }
 
 .intro {
@@ -276,7 +288,7 @@ main {
 }
 
 .projects__list {
-  height: 58vh;
+  height: 55vh;
 }
 
 .project {
@@ -291,11 +303,21 @@ main {
   font-size: 3rem;
   margin-top: 2.4rem;
 }
+@media screen and (max-width: 480px) {
+  .project__title {
+    font-size: 2.4rem;
+  }
+}
 .project__url {
   font-size: 2rem;
   color: #6A6A6A;
   display: block;
   margin-bottom: 2rem;
+}
+@media screen and (max-width: 480px) {
+  .project__url {
+    font-size: 1.8rem;
+  }
 }
 .project__img {
   width: 180px;
@@ -322,6 +344,11 @@ main {
   font-size: 1.9rem;
   font-weight: 300;
   color: #3A3434;
+}
+@media screen and (max-width: 480px) {
+  .project__about {
+    font-size: 1.6rem;
+  }
 }
 .project__tech {
   margin-top: 3rem;
@@ -361,6 +388,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .navigate-page {
@@ -368,8 +396,11 @@ main {
   display: block;
 }
 .navigate-page__down {
-  transform: rotate(90deg);
   position: relative;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: rotate(90deg) translateX(-50%);
 }
 .navigate-page__down::after {
   content: url(../assets/arrow.svg);
@@ -399,6 +430,9 @@ main {
 }
 .navigate-page__up {
   position: relative;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   transform: rotate(-90deg);
 }
 .navigate-page__up::before {
@@ -421,7 +455,7 @@ main {
 }
 
 .contact__info {
-  height: 60vh;
+  height: 55vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -453,6 +487,11 @@ main {
 @media screen and (max-width: 768px) {
   .contact__name {
     font-size: 3.9rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .contact__name {
+    font-size: 3rem;
   }
 }
 .contact__socials {
@@ -493,8 +532,8 @@ main {
   border-left: 2px solid #fff;
 }
 .tag__item:not(:last-child) {
-  margin-right: 1rem;
-  margin-bottom: 1rem;
+  margin-right: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 .tag__item--success {
   border-color: rgb(13, 201, 13);

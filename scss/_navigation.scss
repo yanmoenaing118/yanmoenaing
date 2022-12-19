@@ -1,7 +1,7 @@
 .navigation {
     margin-top: 10rem;
     @include flex-center(space-between);
-
+    position: relative;
 }
 
 .navigate-page {
@@ -11,8 +11,10 @@
     
 
     &__down {
-        transform: rotate(90deg);
+       
         position: relative;
+        @include corner-absolute(bottom,right);
+        transform: rotate(90deg) translateX(-50%);
 
         &::after {
             content: url(../assets/arrow.svg);
@@ -45,6 +47,7 @@
 
     &__up {
         position: relative;
+        @include corner-absolute(bottom,right);
         transform: rotate(-90deg);
         &::before {
             content: url(../assets/arrow.svg);

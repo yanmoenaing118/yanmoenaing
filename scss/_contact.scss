@@ -1,6 +1,6 @@
 .contact {
   &__info {
-    height: 60vh;
+    height: 55vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,6 +34,10 @@
 
     @media screen and (max-width: 768px) {
       font-size: 3.9rem;
+    }
+
+    @media screen and (max-width: 480px) {
+      font-size: 3rem;
     }
   }
 

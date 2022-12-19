@@ -22,6 +22,13 @@ main {
       @media screen and (max-width: 768px) {
         font-size: 2rem;
       }
+
+      @media screen and (max-width: 480px) {
+        font-size: 1.8rem;
+      }
+    }
+    @media screen and (max-width: 480px) {
+     height: $header-height;
     }
   }
 
@@ -31,9 +38,11 @@ main {
 
   &__projects {
     height: 100vh;
+    position: relative;
   }
 
   &__contact {
     height: 100vh;
+    position: relative;
   }
 }
