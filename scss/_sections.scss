@@ -17,6 +17,10 @@ main {
       font-size: 3.2rem;
       text-align: right;
       text-transform: uppercase;
+
+      @media screen and (max-width: 768px) {
+        font-size: 2rem;
+      }
     }
   }
 

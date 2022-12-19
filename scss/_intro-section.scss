@@ -12,6 +12,10 @@
         line-height: .9;
         color: $text-3a3434;
         text-transform: capitalize;
+
+        @media screen and (max-width: 768px) {
+            font-size: 5rem;
+        }
     }
 
     &__desc {
@@ -21,10 +25,15 @@
         font-size: 2.4rem;
         color: $text-686868;
         line-height: 1.6;
+
+        @media screen and (max-width: 768px) {
+            font-size: 1.8rem;
+        }
     }
 
     &__ca {
         padding-top: 1rem;
+
         button {
             font-size: 2.4rem;
             color: $text-743737;
@@ -34,6 +43,10 @@
             padding: .55em 1.8em;
             border-radius: 50px;
             cursor: pointer;
+
+            @media screen and (max-width: 480px) {
+                font-size: 1.8rem;
+            }
         }
     }
 
@@ -42,26 +55,26 @@
         height: $bar-height;
         position: relative;
         transform: translateY(-50%);
-        
-       &::before {
-        content: "";
-        display: table;
-        background-color: $text-743737;
-        @include corner-absolute(top,left);
-        height: $bar-height;
-        width: 4px;
-        margin-left: $gap;
-       }
 
-       &::after {
-        content: "";
-        display: table;
-        background-color: $text-743737;
-        @include corner-absolute(bottom,left);
-        width: $bar-height;
-        height: 4px;
-        margin-left: $gap;
-       }
+        &::before {
+            content: "";
+            display: table;
+            background-color: $text-743737;
+            @include corner-absolute(top, left);
+            height: $bar-height;
+            width: 4px;
+            margin-left: $gap;
+        }
+
+        &::after {
+            content: "";
+            display: table;
+            background-color: $text-743737;
+            @include corner-absolute(bottom, left);
+            width: $bar-height;
+            height: 4px;
+            margin-left: $gap;
+        }
     }
 
 }

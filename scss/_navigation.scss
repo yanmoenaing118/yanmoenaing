@@ -33,4 +33,8 @@
             transform: translateY(3px) rotate(-180deg);
         }
     }
+
+    @media screen and (max-width: 768px) {
+        font-size: 1.4rem;
+    }
 }

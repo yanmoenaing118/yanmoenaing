@@ -12,6 +12,11 @@
 html {
   font-size: 62.5%;
 }
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 60%;
+  }
+}
 
 body {
   font-family: "Lato", sans-serif;
@@ -70,6 +75,11 @@ header {
   font-size: 2.1rem;
   text-transform: lowercase;
 }
+@media screen and (max-width: 768px) {
+  .header nav ul {
+    display: none;
+  }
+}
 
 main {
   height: 100vh;
@@ -92,6 +102,11 @@ main {
   font-size: 3.2rem;
   text-align: right;
   text-transform: uppercase;
+}
+@media screen and (max-width: 768px) {
+  .section__title h1 {
+    font-size: 2rem;
+  }
 }
 .section__intro {
   height: 100vh;
@@ -120,6 +135,11 @@ main {
   color: #3A3434;
   text-transform: capitalize;
 }
+@media screen and (max-width: 768px) {
+  .intro__title {
+    font-size: 5rem;
+  }
+}
 .intro__desc {
   font-family: "Numans", sans-serif;
   font-weight: normal;
@@ -127,6 +147,11 @@ main {
   font-size: 2.4rem;
   color: #686868;
   line-height: 1.6;
+}
+@media screen and (max-width: 768px) {
+  .intro__desc {
+    font-size: 1.8rem;
+  }
 }
 .intro__ca {
   padding-top: 1rem;
@@ -140,6 +165,11 @@ main {
   padding: 0.55em 1.8em;
   border-radius: 50px;
   cursor: pointer;
+}
+@media screen and (max-width: 480px) {
+  .intro__ca button {
+    font-size: 1.8rem;
+  }
 }
 .intro__bars {
   height: 120px;
@@ -265,6 +295,11 @@ main {
   top: 0;
   left: 0;
   transform: translateY(3px) rotate(-180deg);
+}
+@media screen and (max-width: 768px) {
+  .navigate-page {
+    font-size: 1.4rem;
+  }
 }
 
 .contact__info {
