@@ -2,6 +2,7 @@ main {
   height: 100vh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 .section {
@@ -13,7 +14,7 @@ main {
     @include flex-center(space-between);
 
     h1 {
-      font-family: $font-nunioto-sans;
+      font-family: $font-nunito;
       font-size: 3.2rem;
       text-align: right;
       text-transform: uppercase;

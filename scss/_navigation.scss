@@ -7,6 +7,7 @@
 .navigate-page {
 
     font-size: 1.9rem;
+    display: block;
     
 
     &__down {
@@ -31,6 +32,16 @@
             content: url(../assets/arrow.svg);
             @include corner-absolute(top, left);
             transform: translateY(3px) rotate(-180deg);
+        }
+    }
+
+    &__up {
+        position: relative;
+        transform: rotate(-90deg);
+        &::before {
+            content: url(../assets/arrow.svg);
+            @include corner-absolute(top, left);
+            transform: translateX(calc(100% + 16px))  rotate(-360deg);
         }
     }
 

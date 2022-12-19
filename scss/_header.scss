@@ -1,47 +1,129 @@
 header {
-    background-color: $white;
-    
+  background-color: $white;
 }
 
 .header {
-    height: $header-height;
+  height: $header-height;
 
+  @include flex-center;
 
-    
-    @include flex-center;
-    &__logo {
-        display: block;
-        font-family: $font-numans;
-        font-size: 3.2rem;
-        position: relative;
-        &::after {
-            content: "";
-            display: block;
-            width: calc(100% + 18px);
-            height: 5px;
-            background-color: $primary;
-            @include corner-absolute(bottom, left);
-            left: 6px;
+  &__logo {
+    display: block;
+    font-family: $font-numans;
+    font-size: 3.2rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      display: block;
+      width: calc(100% + 18px);
+      height: 5px;
+      background-color: $primary;
+      @include corner-absolute(bottom, left);
+      left: 6px;
+    }
+  }
+
+  nav {
+    .desk {
+      list-style: none;
+      @include flex-center;
+      gap: 38px;
+
+      li {
+        a {
+          font-family: $font-nunioto-sans;
+          font-size: 2.1rem;
+          text-transform: lowercase;
         }
+      }
+
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
     }
 
-    nav {
-        ul {
-            list-style: none;
-            @include flex-center;
-            gap: 38px;
+    .mobile {
+      position: fixed;
+      top: $header-height;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - #{$header-height});
+      background-color: $white;
+      z-index: 100;
+      @include flex-center;
+      transform: scale(0);
+      transform-origin: top;
+      opacity: 0;
+      transition: transform .3s ease-in-out;
+      box-shadow: 0 10px 10px rgba(#000,0.1);
 
-            li {
-                a {
-                    font-family: $font-nunioto-sans;
-                    font-size: 2.1rem;
-                    text-transform: lowercase;
-                }
-            }
+      &.show {
+        opacity: 1;
+        transform: scale(1);
+      }
 
-            @media screen and (max-width: 768px) {
-                display: none;
-            }
+      ul {
+        list-style: none;
+        @include flex-center;
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: -10rem;
+
+        li {
+          a {
+            font-size: 3rem;
+          }
         }
+      }
+
+      @media screen and (min-width: 767.9999px) {
+        display: none;
+      }
     }
+  }
+}
+
+.hamburger {
+  $width: 36px;
+  display: block;
+  width: $width;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  & > span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: $text-6a6a6a;
+    border-radius: 3px;
+    transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  &.active span {
+    opacity: 0;
+  }
+
+  &.active span:first-child {
+    opacity: 1;
+
+    transform-origin: top left;
+  
+    transform: rotate(45deg) translateX(-3px);
+  }
+
+
+
+  &.active span:last-child {
+    opacity: 1;
+    transform-origin: top left;
+    transform: rotate(-45deg) translateX(-12%) ;
+
+  
+  }
+
+  @media screen and (min-width: 767.9999px) {
+    display: none;
+  }
 }

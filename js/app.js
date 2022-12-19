@@ -92,9 +92,7 @@ function setUpProject() {
       projectApproaches.classList.add("project__tech");
       tags.classList.add("tag__list");
 
-      projectImg.src =
-        "/assets/" +
-        projects[this.state.activeIndex].logo;
+      projectImg.src = "/assets/" + projects[this.state.activeIndex].logo;
       projectTitle.textContent = projects[this.state.activeIndex].projectName;
       projectUrl.textContent = projects[this.state.activeIndex].projectLink;
       projectUrl.href = projects[this.state.activeIndex].projectLink;
@@ -104,30 +102,31 @@ function setUpProject() {
 }
 
 function setUpCount() {
-    const count = document.getElementById("count");
-    return {
-        current: 1,
-        setState(current) {
-            this.current = current;
-            this.render();
-        },
-        render() {
-            count.textContent = `${this.current} / 5`;
-        }
-    }
+  const count = document.getElementById("count");
+  return {
+    current: 1,
+    setState(current) {
+      this.current = current;
+      this.render();
+    },
+    render() {
+      count.textContent = `${this.current} / 5`;
+    },
+  };
 }
-
 
 /** Setup Elements */
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
 
+const menuBtn = document.getElementById("hamburger");
+const mobileNav = document.querySelector(".mobile");
+const mobileNavLinks = mobileNav.querySelectorAll("ul li a");
 
 const project = setUpProject();
 project.render();
 const count = setUpCount();
-count.render(); 
-
+count.render();
 
 /** Set state and rerender elements */
 prevBtn.addEventListener("click", () => {
@@ -143,12 +142,22 @@ prevBtn.addEventListener("click", () => {
 
 nextBtn.addEventListener("click", () => {
   if (activeIndex >= projects.length - 1) {
-      activeIndex = 0;
+    activeIndex = 0;
     project.setState({ activeIndex });
   } else {
     activeIndex += 1;
     project.setState({ activeIndex });
   }
   count.setState(activeIndex + 1);
+});
+menuBtn.addEventListener("click", () => {
+  mobileNav.classList.toggle("show");
+  menuBtn.classList.toggle("active");
 
+});
+mobileNavLinks.forEach((el) => {
+  el.addEventListener("click", () => {
+    mobileNav.classList.remove("show");
+    menuBtn.classList.remove("active");
+  });
 });

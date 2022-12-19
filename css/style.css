@@ -57,26 +57,98 @@ header {
   display: block;
   width: calc(100% + 18px);
   height: 5px;
-  background-color: #31F8BD;
+  background-color: hsl(154deg, 79%, 48%);
   position: absolute;
   bottom: 0;
   left: 0;
   left: 6px;
 }
-.header nav ul {
+.header nav .desk {
   list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 38px;
 }
-.header nav ul li a {
+.header nav .desk li a {
   font-family: "Nunito Sans", sans-serif;
   font-size: 2.1rem;
   text-transform: lowercase;
 }
 @media screen and (max-width: 768px) {
-  .header nav ul {
+  .header nav .desk {
+    display: none;
+  }
+}
+.header nav .mobile {
+  position: fixed;
+  top: 78px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 78px);
+  background-color: #fff;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: scale(0);
+  transform-origin: top;
+  opacity: 0;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+.header nav .mobile.show {
+  opacity: 1;
+  transform: scale(1);
+}
+.header nav .mobile ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: -10rem;
+}
+.header nav .mobile ul li a {
+  font-size: 3rem;
+}
+@media screen and (min-width: 767.9999px) {
+  .header nav .mobile {
+    display: none;
+  }
+}
+
+.hamburger {
+  display: block;
+  width: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.hamburger > span {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #6A6A6A;
+  border-radius: 3px;
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.hamburger.active span {
+  opacity: 0;
+}
+.hamburger.active span:first-child {
+  opacity: 1;
+  transform-origin: top left;
+  transform: rotate(45deg) translateX(-3px);
+}
+.hamburger.active span:last-child {
+  opacity: 1;
+  transform-origin: top left;
+  transform: rotate(-45deg) translateX(-12%);
+}
+@media screen and (min-width: 767.9999px) {
+  .hamburger {
     display: none;
   }
 }
@@ -85,6 +157,7 @@ main {
   height: 100vh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 .section {
@@ -98,7 +171,7 @@ main {
   align-items: center;
 }
 .section__title h1 {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 3.2rem;
   text-align: right;
   text-transform: uppercase;
@@ -135,6 +208,9 @@ main {
   color: #3A3434;
   text-transform: capitalize;
 }
+.intro__title span {
+  color: hsl(154deg, 79%, 48%);
+}
 @media screen and (max-width: 768px) {
   .intro__title {
     font-size: 5rem;
@@ -154,9 +230,9 @@ main {
   }
 }
 .intro__ca {
-  padding-top: 1rem;
+  padding-top: 4rem;
 }
-.intro__ca button {
+.intro__ca a {
   font-size: 2.4rem;
   color: #743737;
   background-color: #F7F6F6;
@@ -167,7 +243,7 @@ main {
   cursor: pointer;
 }
 @media screen and (max-width: 480px) {
-  .intro__ca button {
+  .intro__ca a {
     font-size: 1.8rem;
   }
 }
@@ -283,6 +359,7 @@ main {
 
 .navigate-page {
   font-size: 1.9rem;
+  display: block;
 }
 .navigate-page__down {
   transform: rotate(90deg);
@@ -308,6 +385,17 @@ main {
   left: 0;
   transform: translateY(3px) rotate(-180deg);
 }
+.navigate-page__up {
+  position: relative;
+  transform: rotate(-90deg);
+}
+.navigate-page__up::before {
+  content: url(../assets/arrow.svg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(calc(100% + 16px)) rotate(-360deg);
+}
 @media screen and (max-width: 768px) {
   .navigate-page {
     font-size: 1.4rem;
@@ -315,7 +403,7 @@ main {
 }
 
 .contact__info {
-  height: 72vh;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -332,11 +420,22 @@ main {
   height: 100%;
   object-fit: contain;
 }
+@media screen and (max-width: 768px) {
+  .contact__person {
+    width: 160px;
+    height: 160px;
+  }
+}
 .contact__name {
   font-size: 4.9rem;
-  font-family: "Nunito", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-weight: normal;
   margin-bottom: 2rem;
+}
+@media screen and (max-width: 768px) {
+  .contact__name {
+    font-size: 3.9rem;
+  }
 }
 .contact__socials {
   list-style: disc;
@@ -347,20 +446,9 @@ main {
   margin-bottom: 1rem;
 }
 .contact__bars {
-  height: 120px;
+  height: 180px;
   position: relative;
   transform: translateY(-50%);
-}
-.contact__bars::before {
-  content: "";
-  display: table;
-  background-color: #743737;
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 120px;
-  width: 4px;
-  margin-left: 16px;
 }
 .contact__bars::after {
   content: "";
@@ -368,10 +456,16 @@ main {
   background-color: #743737;
   position: absolute;
   bottom: 0;
-  right: 0;
-  width: 120px;
+  left: 0;
+  width: 180px;
   height: 4px;
   margin-left: 16px;
+}
+.contact .github {
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+  gap: 6px;
 }
 
 .tag__item {

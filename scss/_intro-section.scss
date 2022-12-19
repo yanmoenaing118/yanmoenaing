@@ -13,6 +13,10 @@
         color: $text-3a3434;
         text-transform: capitalize;
 
+        span {
+            color: $primary;
+        }
+
         @media screen and (max-width: 768px) {
             font-size: 5rem;
         }
@@ -32,9 +36,9 @@
     }
 
     &__ca {
-        padding-top: 1rem;
+        padding-top: 4rem;
 
-        button {
+        a {
             font-size: 2.4rem;
             color: $text-743737;
             background-color: $bg-F7F6F6;

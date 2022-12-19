@@ -1,6 +1,6 @@
 .contact {
   &__info {
-    height: 72vh;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,13 +19,22 @@
       height: 100%;
       object-fit: contain;
     }
+
+    @media screen and (max-width: 768px) {
+      width: 160px;
+      height: 160px;
+    }
   }
 
   &__name {
     font-size: 4.9rem;
-    font-family: $font-nunito;
+    font-family: $font-nunioto-sans;
     font-weight: normal;
     margin-bottom: 2rem;
+
+    @media screen and (max-width: 768px) {
+      font-size: 3.9rem;
+    }
   }
 
   &__socials {
@@ -38,29 +47,28 @@
   }
 
   &__bars {
-    $bar-height: 120px;
+    $bar-height: 180px;
     height: $bar-height;
     position: relative;
     transform: translateY(-50%);
 
-    &::before {
-      content: "";
-      display: table;
-      background-color: $text-743737;
-      @include corner-absolute(top, right);
-      height: $bar-height;
-      width: 4px;
-      margin-left: $gap;
-    }
+  
 
     &::after {
       content: "";
       display: table;
       background-color: $text-743737;
-      @include corner-absolute(bottom, right);
+      @include corner-absolute(bottom, left);
       width: $bar-height;
       height: 4px;
       margin-left: $gap;
     }
+  }
+
+  .github {
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 6px;
   }
 }
