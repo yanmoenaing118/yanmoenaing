@@ -50,6 +50,7 @@ const projects = [
   },
 ];
 
+/** Renderers */
 function setUpProject() {
   const projectsContainer = document.getElementById("projects");
   const projectEl = document.createElement("div");
@@ -66,7 +67,6 @@ function setUpProject() {
       activeIndex: 0,
     },
     setState(newState) {
-        console.log(newState);
       this.state = { ...newState };
       this.render();
     },
@@ -93,7 +93,7 @@ function setUpProject() {
       tags.classList.add("tag__list");
 
       projectImg.src =
-        "https://yanmoenaing118.github.io/assets/" +
+        "/assets/" +
         projects[this.state.activeIndex].logo;
       projectTitle.textContent = projects[this.state.activeIndex].projectName;
       projectUrl.textContent = projects[this.state.activeIndex].projectLink;
@@ -103,19 +103,52 @@ function setUpProject() {
   };
 }
 
+function setUpCount() {
+    const count = document.getElementById("count");
+    return {
+        current: 1,
+        setState(current) {
+            this.current = current;
+            this.render();
+        },
+        render() {
+            count.textContent = `${this.current} / 5`;
+        }
+    }
+}
+
+
+/** Setup Elements */
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
-console.log(prevBtn);
-console.log(nextBtn);
+
 
 const project = setUpProject();
 project.render();
+const count = setUpCount();
+count.render(); 
 
+
+/** Set state and rerender elements */
 prevBtn.addEventListener("click", () => {
-    console.log('hi')
-    project.setState({ activeIndex: ++activeIndex})
-})
+  if (activeIndex < 0) {
+    activeIndex = projects.length - 1;
+    project.setState({ activeIndex: activeIndex });
+  } else {
+    project.setState({ activeIndex });
+    activeIndex -= 1;
+  }
+  count.setState(activeIndex + 1);
+});
 
 nextBtn.addEventListener("click", () => {
-    project.setState({ activeIndex: ++activeIndex })
-})
+  if (activeIndex >= projects.length - 1) {
+      activeIndex = 0;
+    project.setState({ activeIndex });
+  } else {
+    activeIndex += 1;
+    project.setState({ activeIndex });
+  }
+  count.setState(activeIndex + 1);
+
+});

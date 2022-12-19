@@ -1,133 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yan Moe Naing - Frontend Developer</title>
     <link rel="stylesheet" href="css/style.css" />
-</head>
+  </head>
 
-<body>
+  <body>
     <main>
-        <section class="section section__intro">
-            <header>
-                <div class="container header">
-                    <a href="/" class="header__logo">webdev</a>
-                    <nav>
-                        <ul>
-                            <li>
-                                <a href="/">home</a>
-                            </li>
-                            <li>
-                                <a href="#about">About</a>
-                            </li>
-                            <li>
-                                <a href="#projects">Projects</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
-            <div class="container intro">
-                <h1 class="intro__title">Hi, I'm <span> Yan Moe Naing.</span></h1>
-                <p class="intro__desc">
-                    I'm a dedicated frontend developer.<br />
-                    I imagine things, research things and create things <br />
-                    by writing code.
-                </p>
-                <div class="intro__ca">
-                    <button>See Projects</button>
-                </div>
+      <section class="section section__intro">
+        <header>
+          <div class="container header">
+            <a href="/" class="header__logo">webdev</a>
+            <nav>
+              <ul>
+                <li>
+                  <a href="/">home</a>
+                </li>
+                <li>
+                  <a href="#about">About</a>
+                </li>
+                <li>
+                  <a href="#projects">Projects</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <div class="container intro">
+          <h1 class="intro__title">Hi, I'm <span> Yan Moe Naing.</span></h1>
+          <p class="intro__desc">
+            I'm a dedicated frontend developer.<br />
+            I imagine things, research things and create things <br />
+            by writing code.
+          </p>
+          <div class="intro__ca">
+            <button>See Projects</button>
+          </div>
+        </div>
+
+        <div class="container intro__bars"></div>
+      </section>
+      <section class="section section__projects">
+        <div class="container projects">
+          <div class="section__title">
+            <div class="navigate-page navigate-page__back">Back to Home</div>
+            <h1>recent works</h1>
+          </div>
+          <div class="projects__list" id="projects"></div>
+          <div class="navigation">
+            <div class="project__navigation">
+              <button
+                class="project__navigation-btn"
+                id="prev"
+                title="Coming Soon"
+              >
+                &lsaquo;
+              </button>
+              <span id="count">1 / 5</span>
+              <button
+                class="project__navigation-btn"
+                id="next"
+                title="Coming Soon"
+              >
+                &rsaquo;
+              </button>
             </div>
 
-            <div class="container intro__bars"></div>
-        </section>
-        <section class="section section__projects">
-            <div class="container projects">
-                <div class="section__title">
-                    <div class="navigate-page navigate-page__back">
-                        Back to Home
-                    </div>
-                    <h1>recent works</h1>
-                </div>
-                <div class="projects__list" id="projects">
-                    <!-- <div class="project">
-                        <div class="project__img">
-                            <img src="https://yanmoenaing118.github.io/assets/olive-go.jpg"
-                                alt="Olive Go - Home Improvement" loading="lazy">
-
-                        </div>
-                        <h2 class="project__title">Olive Go - Home Improvement</h2>
-                        <a class="project__url" href="https://olivego.com">https://olivego.com</a>
-                        <p class="project__about">
-                            Customers will be able to shop from anywhere across the nation for a full range of home
-                            improvement products with installation, repair, and maintenance services that complement
-                            every product available on the platform.
-                        </p>
-
-                        <div class="project__tech">
-                            <div class="tag__list">
-                                <div class="tag__item tag__item--success">Next.JS</div>
-                                <div class="tag__item tag__item--info">Styled JSX</div>
-                                <div class="tag__item tag__item--indigo">SWR</div>
-                            </div>
-                        </div>
-                    </div> -->
-
-                </div>
-                <div class="navigation">
-                    <div class="project__navigation">
-                        <button class="project__navigation-btn" id="prev" title="Coming Soon"  >&lsaquo;</button>
-                        <span>1 / 5</span>
-                        <button class="project__navigation-btn" id="next" title="Coming Soon"  >&rsaquo;</button>
-                    </div>
-
-                    <div class="navigation__page">
-                        <div class="navigate-page navigate-page__down">
-                            Contact
-                        </div>
-                    </div>
-                </div>
+            <div class="navigation__page">
+              <div class="navigate-page navigate-page__down">Contact</div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section class="section section__contact">
-            <div class="container contact">
-                <div class="section__title">
-                    <div class="navigate-page navigate-page__back">
-                        Back to Works
-                    </div>
-                    <h1>Contact Me</h1>
-                </div>
-                <div class="contact__info">
-                    <div class="contact__person">
-                        <img src="/assets/person.png" alt="yanmoenaing118">
-                    </div>
-                    <div class="contact__name">
-                        Yan Moe Naing
-                    </div>
-                    <ul class="contact__socials">
-                        <li>
-                            <a href="mailto:ymn.dev.coder@gmail.com">ymn.dev.coder@gmail.com</a>
-                        </li>
-                        <li>
-                            <a href="tel:+959768047177">09 768 047 177</a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/yan-moe-naing">yan-moe-naing</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="contact__bars">
-
-                </div>
+      <section class="section section__contact">
+        <div class="container contact">
+          <div class="section__title">
+            <div class="navigate-page navigate-page__back">Back to Works</div>
+            <h1>Contact Me</h1>
+          </div>
+          <div class="contact__info">
+            <div class="contact__person">
+              <img src="/assets/person.png" alt="yanmoenaing118" />
             </div>
-        </section>
+            <div class="contact__name">Yan Moe Naing</div>
+            <ul class="contact__socials">
+              <li>
+                <a href="mailto:ymn.dev.coder@gmail.com"
+                  >ymn.dev.coder@gmail.com</a
+                >
+              </li>
+              <li>
+                <a href="tel:+959768047177">09 768 047 177</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/yan-moe-naing"
+                  >yan-moe-naing</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="contact__bars"></div>
+        </div>
+      </section>
     </main>
     <script src="js/app.js"></script>
-</body>
-
+  </body>
 </html>

@@ -98,7 +98,7 @@ main {
   align-items: center;
 }
 .section__title h1 {
-  font-family: "Numans", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 3.2rem;
   text-align: right;
   text-transform: uppercase;
@@ -205,6 +205,8 @@ main {
 
 .project {
   font-family: "Lato", sans-serif;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
 }
 .project__title {
   font-family: "Oleo Script", cursive;
@@ -260,6 +262,16 @@ main {
   align-items: center;
   color: #686868;
   padding-bottom: 0.3rem;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .navigation {

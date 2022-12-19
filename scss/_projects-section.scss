@@ -4,9 +4,10 @@
     }
 }
 
-
 .project {
     font-family: $font-lato;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
 
     &__title {
         font-family: $font-oleo;
@@ -54,6 +55,7 @@
         display: flex;
         gap: 2rem;
         align-items: center;
+
         &-btn {
             width: 40px;
             height: 40px;
@@ -64,10 +66,20 @@
             font-size: 2.5rem;
             @include flex-center(center);
             color: $text-686868;
-            padding-bottom: .3rem;
+            padding-bottom: 0.3rem;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(100px);
         }
 
+        to {
+            opacity: 1;
+            transform: translateY(0);
 
-
+        }
     }
 }
