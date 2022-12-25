@@ -9,16 +9,15 @@
     font-family: $font-bentham;
     font-weight: normal;
     font-size: 7rem;
-    line-height: 0.9;
+    line-height: 1.1;
     color: $text-3a3434;
     text-transform: capitalize;
+
 
     p {
       text-transform: capitalize;
       display: inline-block;
       padding-right: 1rem;
-
-     
     }
 
     span {
@@ -26,12 +25,14 @@
       opacity: 0;
       animation-name: showUP;
       animation-fill-mode: forwards;
-      animation-duration: 0.1s;
-      transform: translateY(23px);
+      animation-duration: 0.3s;
+      transform: translateY(60px);
       display: inline-block;
+      position: relative;
+      animation-timing-function: ease-out;
 
       &::before {
-        content: "a";
+        content: "A";
         opacity: 0;
         position: absolute;
       }

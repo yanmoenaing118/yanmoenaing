@@ -210,12 +210,16 @@ function createTextAnimation() {
   const nameEl = document.querySelector(".intro__title");
   const text = "Yan Moe Naing".split(" ");
   console.log(text);
+  const DELAY = .1;
+  let totalDelay = DELAY;
+
   for (let i = 0; i < text.length; i++) {
     const p = document.createElement("p");
     for (let j = 0; j < text[i].length; j++) {
       const span = document.createElement("span");
       span.textContent = text[i][j];
-      span.setAttribute("style", `animation-delay:${(i + j) / 10}s;`);
+      span.setAttribute("style", `animation-delay:${totalDelay}s;`);
+      totalDelay += DELAY ;
       p.appendChild(span);
     }
   
