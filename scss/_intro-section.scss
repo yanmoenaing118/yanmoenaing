@@ -30,6 +30,11 @@
         color: $text-686868;
         line-height: 1.6;
 
+        small {
+            font-size: 1.6rem;
+            color: $text-686868;
+        }
+
         @media screen and (max-width: 768px) {
             font-size: 1.8rem;
         }

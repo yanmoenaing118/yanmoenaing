@@ -236,6 +236,10 @@ main {
   color: #686868;
   line-height: 1.6;
 }
+.intro__desc small {
+  font-size: 1.6rem;
+  color: #686868;
+}
 @media screen and (max-width: 768px) {
   .intro__desc {
     font-size: 1.8rem;
