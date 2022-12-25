@@ -1,89 +1,115 @@
 .intro {
-    @include flex-center(center);
-    flex-direction: column;
-    height: calc(100% - #{$header-height} - 14%);
-    background-color: $white;
-    text-align: center;
+  @include flex-center(center);
+  flex-direction: column;
+  height: calc(100% - #{$header-height} - 14%);
+  background-color: $white;
+  text-align: center;
 
-    &__title {
-        font-family: $font-bentham;
-        font-weight: normal;
-        font-size: 7rem;
-        line-height: .9;
-        color: $text-3a3434;
-        text-transform: capitalize;
+  &__title {
+    font-family: $font-bentham;
+    font-weight: normal;
+    font-size: 7rem;
+    line-height: 0.9;
+    color: $text-3a3434;
+    text-transform: capitalize;
 
-        span {
-            color: $primary;
-        }
+    p {
+      text-transform: capitalize;
+      display: inline-block;
+      padding-right: 1rem;
 
-        @media screen and (max-width: 768px) {
-            font-size: 5rem;
-        }
+     
     }
 
-    &__desc {
-        font-family: $font-numans;
-        font-weight: normal;
-        margin: 2rem 0;
-        font-size: 2.4rem;
-        color: $text-686868;
-        line-height: 1.6;
+    span {
+      color: $primary;
+      opacity: 0;
+      animation-name: showUP;
+      animation-fill-mode: forwards;
+      animation-duration: 0.1s;
+      transform: translateY(23px);
+      display: inline-block;
 
-        small {
-            font-size: 1.6rem;
-            color: $text-686868;
-        }
-
-        @media screen and (max-width: 768px) {
-            font-size: 1.8rem;
-        }
+      &::before {
+        content: "a";
+        opacity: 0;
+        position: absolute;
+      }
     }
 
-    &__ca {
-        padding-top: 4rem;
-
-        a {
-            font-size: 2.4rem;
-            color: $text-743737;
-            background-color: $bg-F7F6F6;
-            font-family: $font-nunito;
-            font-weight: 800;
-            padding: .55em 1.8em;
-            border-radius: 50px;
-            cursor: pointer;
-
-            @media screen and (max-width: 480px) {
-                font-size: 1.8rem;
-            }
-        }
+    @keyframes showUP {
+      to {
+        opacity: 1;
+        transform: translateY(0px);
+      }
     }
 
-    &__bars {
-        $bar-height: 120px;
-        height: $bar-height;
-        position: relative;
-        transform: translateY(-50%);
+    @media screen and (max-width: 768px) {
+      font-size: 5rem;
+    }
+  }
 
-        &::before {
-            content: "";
-            display: table;
-            background-color: $text-743737;
-            @include corner-absolute(top, left);
-            height: $bar-height;
-            width: 4px;
-            margin-left: $gap;
-        }
+  &__desc {
+    font-family: $font-numans;
+    font-weight: normal;
+    margin: 2rem 0;
+    font-size: 2.4rem;
+    color: $text-686868;
+    line-height: 1.6;
 
-        &::after {
-            content: "";
-            display: table;
-            background-color: $text-743737;
-            @include corner-absolute(bottom, left);
-            width: $bar-height;
-            height: 4px;
-            margin-left: $gap;
-        }
+    small {
+      font-size: 1.6rem;
+      color: $text-686868;
     }
 
+    @media screen and (max-width: 768px) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__ca {
+    padding-top: 4rem;
+
+    a {
+      font-size: 2.4rem;
+      color: $text-743737;
+      background-color: $bg-F7F6F6;
+      font-family: $font-nunito;
+      font-weight: 800;
+      padding: 0.55em 1.8em;
+      border-radius: 50px;
+      cursor: pointer;
+
+      @media screen and (max-width: 480px) {
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  &__bars {
+    $bar-height: 120px;
+    height: $bar-height;
+    position: relative;
+    transform: translateY(-50%);
+
+    &::before {
+      content: "";
+      display: table;
+      background-color: $text-743737;
+      @include corner-absolute(top, left);
+      height: $bar-height;
+      width: 4px;
+      margin-left: $gap;
+    }
+
+    &::after {
+      content: "";
+      display: table;
+      background-color: $text-743737;
+      @include corner-absolute(bottom, left);
+      width: $bar-height;
+      height: 4px;
+      margin-left: $gap;
+    }
+  }
 }

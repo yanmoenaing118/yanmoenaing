@@ -101,20 +101,20 @@ const projects = [
     approaches: [
       {
         label: "React",
-        color: "cyan"
+        color: "cyan",
       },
       {
         label: "Vue",
-        color: "green"
+        color: "green",
       },
       {
         label: "Angular",
-        color: "red"
+        color: "red",
       },
       {
         label: "Rest API",
-        color: "gold"
-      }
+        color: "gold",
+      },
     ],
   },
 
@@ -164,7 +164,6 @@ function setUpProject() {
       projectEl.appendChild(projectApproaches);
       projectsContainer.appendChild(projectEl);
 
-
       projectEl.classList.add("project");
       projectImgWrapper.classList.add("project__img");
       projectTitle.classList.add("project__title");
@@ -172,15 +171,17 @@ function setUpProject() {
       projectAbout.classList.add("project__about");
       projectApproaches.classList.add("project__tech");
       tags.classList.add("tag__list");
-      tags.innerHTML = '';
+      tags.innerHTML = "";
 
-      projects[this.state.activeIndex].approaches.forEach(({ label, color}) => {
-        const tagItem = document.createElement("div");
-        tagItem.textContent = label;
-        tagItem.classList.add("tag__item");
-        tagItem.classList.add(`b-color--${color}`);
-        tags.appendChild(tagItem);
-      })
+      projects[this.state.activeIndex].approaches.forEach(
+        ({ label, color }) => {
+          const tagItem = document.createElement("div");
+          tagItem.textContent = label;
+          tagItem.classList.add("tag__item");
+          tagItem.classList.add(`b-color--${color}`);
+          tags.appendChild(tagItem);
+        }
+      );
 
       projectImg.src = "/assets/" + projects[this.state.activeIndex].logo;
       projectTitle.textContent = projects[this.state.activeIndex].projectName;
@@ -205,6 +206,23 @@ function setUpCount() {
   };
 }
 
+function createTextAnimation() {
+  const nameEl = document.querySelector(".intro__title");
+  const text = "Yan Moe Naing".split(" ");
+  console.log(text);
+  for (let i = 0; i < text.length; i++) {
+    const p = document.createElement("p");
+    for (let j = 0; j < text[i].length; j++) {
+      const span = document.createElement("span");
+      span.textContent = text[i][j];
+      span.setAttribute("style", `animation-delay:${(i + j) / 10}s;`);
+      p.appendChild(span);
+    }
+  
+    nameEl.appendChild(p);
+  }
+}
+
 /** Setup Elements */
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
@@ -217,6 +235,7 @@ const project = setUpProject();
 project.render();
 const count = setUpCount();
 count.render();
+createTextAnimation();
 
 /** Set state and rerender elements */
 prevBtn.addEventListener("click", () => {
