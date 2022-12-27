@@ -57,6 +57,14 @@
     font-size: 2.4rem;
     color: $text-686868;
     line-height: 1.6;
+    opacity: 0;
+    transform: rotate(90deg) scale(0)  ;
+    transition: all .5s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+    &.show {
+      opacity: 1;
+      transform: rotate(0) scale(1) ;
+    }
 
     small {
       font-size: 1.6rem;
@@ -72,7 +80,8 @@
     padding-top: 4rem;
 
     a {
-      font-size: 2.4rem;
+      display: block;
+      font-size: 2.2rem;
       color: $text-743737;
       background-color: $bg-F7F6F6;
       font-family: $font-nunito;
@@ -80,6 +89,19 @@
       padding: 0.55em 1.8em;
       border-radius: 50px;
       cursor: pointer;
+      box-shadow: 0 3px 3px rgba(#000,0.3);
+      transition: all .3s ease-out;
+      transform: translateY(20px);
+      opacity: 0;
+      &.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      &:hover {
+        transform: scale(.95);
+      box-shadow: 0 3px 10px rgba(#000,0.3);
+
+      }
 
       @media screen and (max-width: 480px) {
         font-size: 1.8rem;

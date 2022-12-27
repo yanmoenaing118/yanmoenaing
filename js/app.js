@@ -133,7 +133,7 @@ const projects = [
 const commonSetupUtils = {
   setState(state) {
     this.state = { ...state };
-    if (this.render && typeof this.render === 'function') {
+    if (this.render && typeof this.render === "function") {
       this.render();
     }
   },
@@ -154,62 +154,58 @@ function setUpProject() {
 
   let publicAPI = Object.create(commonSetupUtils);
   publicAPI.state = {
-    activeIndex: 0
-  }
+    activeIndex: 0,
+  };
   publicAPI.render = function () {
     const child = projectsContainer.querySelector("project");
-      if (child) {
-        projectsContainer.removeChild(child);
-      }
-      projectImgWrapper.appendChild(projectImg);
-      projectEl.appendChild(projectImgWrapper);
-      projectEl.appendChild(projectTitle);
-      projectEl.appendChild(projectUrl);
-      projectEl.appendChild(projectAbout);
-      projectApproaches.appendChild(tags);
-      projectEl.appendChild(projectApproaches);
-      projectsContainer.appendChild(projectEl);
+    if (child) {
+      projectsContainer.removeChild(child);
+    }
+    projectImgWrapper.appendChild(projectImg);
+    projectEl.appendChild(projectImgWrapper);
+    projectEl.appendChild(projectTitle);
+    projectEl.appendChild(projectUrl);
+    projectEl.appendChild(projectAbout);
+    projectApproaches.appendChild(tags);
+    projectEl.appendChild(projectApproaches);
+    projectsContainer.appendChild(projectEl);
 
-      projectEl.classList.add("project");
-      projectImgWrapper.classList.add("project__img");
-      projectTitle.classList.add("project__title");
-      projectUrl.classList.add("project__url");
-      projectAbout.classList.add("project__about");
-      projectApproaches.classList.add("project__tech");
-      tags.classList.add("tag__list");
-      tags.innerHTML = "";
+    projectEl.classList.add("project");
+    projectImgWrapper.classList.add("project__img");
+    projectTitle.classList.add("project__title");
+    projectUrl.classList.add("project__url");
+    projectAbout.classList.add("project__about");
+    projectApproaches.classList.add("project__tech");
+    tags.classList.add("tag__list");
+    tags.innerHTML = "";
 
-      projects[this.state.activeIndex].approaches.forEach(
-        ({ label, color }) => {
-          const tagItem = document.createElement("div");
-          tagItem.textContent = label;
-          tagItem.classList.add("tag__item");
-          tagItem.classList.add(`b-color--${color}`);
-          tags.appendChild(tagItem);
-        }
-      );
+    projects[this.state.activeIndex].approaches.forEach(({ label, color }) => {
+      const tagItem = document.createElement("div");
+      tagItem.textContent = label;
+      tagItem.classList.add("tag__item");
+      tagItem.classList.add(`b-color--${color}`);
+      tags.appendChild(tagItem);
+    });
 
-      projectImg.src = "/assets/" + projects[this.state.activeIndex].logo;
-      projectTitle.textContent = projects[this.state.activeIndex].projectName;
-      projectUrl.textContent = projects[this.state.activeIndex].projectLink;
-      projectUrl.href = projects[this.state.activeIndex].projectLink;
-      projectAbout.textContent = projects[this.state.activeIndex].projectBrief;
-  }
-
+    projectImg.src = "/assets/" + projects[this.state.activeIndex].logo;
+    projectTitle.textContent = projects[this.state.activeIndex].projectName;
+    projectUrl.textContent = projects[this.state.activeIndex].projectLink;
+    projectUrl.href = projects[this.state.activeIndex].projectLink;
+    projectAbout.textContent = projects[this.state.activeIndex].projectBrief;
+  };
 
   return publicAPI;
-  
 }
 
 function setUpCount() {
   const count = document.getElementById("count");
   let publicAPI = Object.create(commonSetupUtils);
   publicAPI.state = {
-    current: 1
-  }
-  publicAPI.render = function() {
+    current: 1,
+  };
+  publicAPI.render = function () {
     count.textContent = `${this.state.current} / ${projects.length}`;
-  }
+  };
   return publicAPI;
 }
 
@@ -232,6 +228,9 @@ function createTextAnimation() {
 
     nameEl.appendChild(p);
   }
+  return {
+    totalDelay,
+  };
 }
 
 /** Setup Elements */
@@ -242,11 +241,22 @@ const menuBtn = document.getElementById("hamburger");
 const mobileNav = document.querySelector(".mobile");
 const mobileNavLinks = mobileNav.querySelectorAll("ul li a");
 
+const desc = document.querySelector(".intro__desc");
+const projectsBtn = document.querySelector(".intro__ca a");
+const { totalDelay } = createTextAnimation();
+
+setTimeout(() => {
+  console.log(totalDelay);
+  desc.classList.add("show");
+  setTimeout(() => {
+    projectsBtn.classList.add("show");
+  }, totalDelay * 500);
+}, totalDelay * 1000);
+
 const project = setUpProject();
 project.render();
 const count = setUpCount();
 count.render();
-createTextAnimation();
 
 /** Set state and rerender elements */
 prevBtn.addEventListener("click", () => {
@@ -257,7 +267,7 @@ prevBtn.addEventListener("click", () => {
     project.setState({ activeIndex });
     activeIndex -= 1;
   }
-  count.setState({ current: activeIndex + 1});
+  count.setState({ current: activeIndex + 1 });
 });
 
 nextBtn.addEventListener("click", () => {
@@ -268,7 +278,7 @@ nextBtn.addEventListener("click", () => {
     activeIndex += 1;
     project.setState({ activeIndex });
   }
-  count.setState({ current: activeIndex + 1});
+  count.setState({ current: activeIndex + 1 });
 });
 menuBtn.addEventListener("click", () => {
   mobileNav.classList.toggle("show");
