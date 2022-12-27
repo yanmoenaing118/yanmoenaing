@@ -129,6 +129,16 @@ const projects = [
 ];
 
 /** Renderers */
+
+const commonSetupUtils = {
+  setState(state) {
+    this.state = { ...state };
+    if (this.render && typeof this.render === 'function') {
+      this.render();
+    }
+  },
+};
+
 function setUpProject() {
   const projectsContainer = document.getElementById("projects");
   const projectEl = document.createElement("div");
@@ -142,16 +152,12 @@ function setUpProject() {
 
   projectUrl.setAttribute("target", "_blank");
 
-  return {
-    state: {
-      activeIndex: 0,
-    },
-    setState(newState) {
-      this.state = { ...newState };
-      this.render();
-    },
-    render() {
-      const child = projectsContainer.querySelector("project");
+  let publicAPI = Object.create(commonSetupUtils);
+  publicAPI.state = {
+    activeIndex: 0
+  }
+  publicAPI.render = function () {
+    const child = projectsContainer.querySelector("project");
       if (child) {
         projectsContainer.removeChild(child);
       }
@@ -188,29 +194,30 @@ function setUpProject() {
       projectUrl.textContent = projects[this.state.activeIndex].projectLink;
       projectUrl.href = projects[this.state.activeIndex].projectLink;
       projectAbout.textContent = projects[this.state.activeIndex].projectBrief;
-    },
-  };
+  }
+
+
+  return publicAPI;
+  
 }
 
 function setUpCount() {
   const count = document.getElementById("count");
-  return {
-    current: 1,
-    setState(current) {
-      this.current = current;
-      this.render();
-    },
-    render() {
-      count.textContent = `${this.current} / ${projects.length}`;
-    },
-  };
+  let publicAPI = Object.create(commonSetupUtils);
+  publicAPI.state = {
+    current: 1
+  }
+  publicAPI.render = function() {
+    count.textContent = `${this.state.current} / ${projects.length}`;
+  }
+  return publicAPI;
 }
 
 function createTextAnimation() {
   const nameEl = document.querySelector(".intro__title");
   const text = "Yan Moe Naing".split(" ");
   console.log(text);
-  const DELAY = .1;
+  const DELAY = 0.1;
   let totalDelay = DELAY;
 
   for (let i = 0; i < text.length; i++) {
@@ -219,10 +226,10 @@ function createTextAnimation() {
       const span = document.createElement("span");
       span.textContent = text[i][j];
       span.setAttribute("style", `animation-delay:${totalDelay}s;`);
-      totalDelay += DELAY ;
+      totalDelay += DELAY;
       p.appendChild(span);
     }
-  
+
     nameEl.appendChild(p);
   }
 }
@@ -250,7 +257,7 @@ prevBtn.addEventListener("click", () => {
     project.setState({ activeIndex });
     activeIndex -= 1;
   }
-  count.setState(activeIndex + 1);
+  count.setState({ current: activeIndex + 1});
 });
 
 nextBtn.addEventListener("click", () => {
@@ -261,7 +268,7 @@ nextBtn.addEventListener("click", () => {
     activeIndex += 1;
     project.setState({ activeIndex });
   }
-  count.setState(activeIndex + 1);
+  count.setState({ current: activeIndex + 1});
 });
 menuBtn.addEventListener("click", () => {
   mobileNav.classList.toggle("show");
