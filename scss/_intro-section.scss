@@ -121,9 +121,9 @@
       height: $bar-height;
       width: 4px;
       margin-left: $gap;
-      animation: scaleY 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      animation: scaleY 1s ease-in infinite alternate-reverse forwards;
       transform-origin: bottom;
-      transform: scaleY(0);
+      transform: scaleY(0.5);
     }
 
     &::after {
@@ -135,8 +135,8 @@
       height: 4px;
       margin-left: $gap;
       transform-origin: left;
-      transform: scaleX(0);
-      animation: scaleX 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      transform: scaleX(0.5);
+      animation: scaleX 1s ease-in infinite alternate-reverse forwards;
     }
     @keyframes scaleY {
       to {
