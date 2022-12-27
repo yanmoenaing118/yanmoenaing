@@ -246,7 +246,7 @@ const projectsBtn = document.querySelector(".intro__ca a");
 const { totalDelay } = createTextAnimation();
 
 setTimeout(() => {
-  console.log(totalDelay);
+  // we need a better sequence
   desc.classList.add("show");
   setTimeout(() => {
     projectsBtn.classList.add("show");

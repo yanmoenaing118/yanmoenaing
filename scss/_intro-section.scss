@@ -13,7 +13,6 @@
     color: $text-3a3434;
     text-transform: capitalize;
 
-
     p {
       text-transform: capitalize;
       display: inline-block;
@@ -58,12 +57,12 @@
     color: $text-686868;
     line-height: 1.6;
     opacity: 0;
-    transform: rotate(90deg) scale(0)  ;
-    transition: all .5s cubic-bezier(0.39, 0.575, 0.565, 1);
+    transform: rotate(90deg) scale(0);
+    transition: all 0.5s cubic-bezier(0.39, 0.575, 0.565, 1);
 
     &.show {
       opacity: 1;
-      transform: rotate(0) scale(1) ;
+      transform: rotate(0) scale(1);
     }
 
     small {
@@ -89,8 +88,8 @@
       padding: 0.55em 1.8em;
       border-radius: 50px;
       cursor: pointer;
-      box-shadow: 0 3px 3px rgba(#000,0.3);
-      transition: all .3s ease-out;
+      box-shadow: 0 3px 3px rgba(#000, 0.3);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       transform: translateY(20px);
       opacity: 0;
       &.show {
@@ -98,9 +97,8 @@
         transform: translateY(0);
       }
       &:hover {
-        transform: scale(.95);
-      box-shadow: 0 3px 10px rgba(#000,0.3);
-
+        transform: scale(0.95);
+        box-shadow: 0 3px 10px rgba(#000, 0.3);
       }
 
       @media screen and (max-width: 480px) {
@@ -123,6 +121,9 @@
       height: $bar-height;
       width: 4px;
       margin-left: $gap;
+      animation: scaleY 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      transform-origin: bottom;
+      transform: scaleY(0);
     }
 
     &::after {
@@ -133,6 +134,20 @@
       width: $bar-height;
       height: 4px;
       margin-left: $gap;
+      transform-origin: left;
+      transform: scaleX(0);
+      animation: scaleX 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+    @keyframes scaleY {
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    @keyframes scaleX {
+      to {
+        transform: scaleX(1);
+      }
     }
   }
 }
