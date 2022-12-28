@@ -22,6 +22,7 @@ body {
   font-family: "Lato", sans-serif;
   font-size: 1.6rem;
   color: #6A6A6A;
+  overflow-x: hidden;
 }
 
 .container {
@@ -347,7 +348,7 @@ main {
 .project {
   font-family: "Lato", sans-serif;
   opacity: 0;
-  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.3s;
 }
 .project__title {
   font-family: "Oleo Script", cursive;
@@ -405,6 +406,9 @@ main {
 }
 .project__tech {
   margin-top: 3rem;
+  transform: translateY(-50px);
+  opacity: 0;
+  animation: up 1s ease forwards;
 }
 .project__navigation {
   display: flex;
@@ -428,11 +432,17 @@ main {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateY(120px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes up {
+  to {
+    opacity: 1;
+    transform: translateY(100%);
   }
 }
 

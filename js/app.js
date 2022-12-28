@@ -150,6 +150,17 @@ function setUpProject() {
   const projectApproaches = document.createElement("div");
   const tags = document.createElement("div");
 
+  const obsever = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const el = entry.target;
+      if (entry.isIntersecting) {
+        el.style.animation = "fadeIn 1s ease-out forwards";
+      }
+    });
+  });
+
+  obsever.observe(projectEl);
+
   projectUrl.setAttribute("target", "_blank");
 
   let publicAPI = Object.create(commonSetupUtils);
@@ -176,6 +187,7 @@ function setUpProject() {
     projectUrl.classList.add("project__url");
     projectAbout.classList.add("project__about");
     projectApproaches.classList.add("project__tech");
+    
     tags.classList.add("tag__list");
     tags.innerHTML = "";
 
@@ -216,20 +228,17 @@ function createTextAnimation() {
   const DELAY = 0.1;
   let totalDelay = DELAY;
 
-  nameEl.innerHTML = "Hi, I'm " + text.split('').map((text,idx) => `<span style='animation-delay:${idx*50}ms'  >${text.trim() ? text:'&nbsp;'}</span>`).join("");
-
-  // for (let i = 0; i < text.length; i++) {
-  //   const p = document.createElement("p");
-  //   for (let j = 0; j < text[i].length; j++) {
-  //     const span = document.createElement("span");
-  //     span.textContent = text[i][j];
-  //     span.setAttribute("style", `animation-delay:${totalDelay}s;`);
-  //     totalDelay += DELAY;
-  //     p.appendChild(span);
-  //   }
-
-  //   nameEl.appendChild(p);
-  // }
+  nameEl.innerHTML =
+    "Hi, I'm " +
+    text
+      .split("")
+      .map(
+        (text, idx) =>
+          `<span style='animation-delay:${idx * 50}ms'  >${
+            text.trim() ? text : "&nbsp;"
+          }</span>`
+      )
+      .join("");
   return {
     totalDelay,
   };
