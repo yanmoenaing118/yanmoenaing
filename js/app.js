@@ -211,23 +211,25 @@ function setUpCount() {
 
 function createTextAnimation() {
   const nameEl = document.querySelector(".intro__title");
-  const text = "Yan Moe Naing".split(" ");
+  const text = "Yan Moe Naing";
   console.log(text);
   const DELAY = 0.1;
   let totalDelay = DELAY;
 
-  for (let i = 0; i < text.length; i++) {
-    const p = document.createElement("p");
-    for (let j = 0; j < text[i].length; j++) {
-      const span = document.createElement("span");
-      span.textContent = text[i][j];
-      span.setAttribute("style", `animation-delay:${totalDelay}s;`);
-      totalDelay += DELAY;
-      p.appendChild(span);
-    }
+  nameEl.innerHTML = "Hi, I'm " + text.split('').map((text,idx) => `<span style='animation-delay:${idx*50}ms'  >${text.trim() ? text:'&nbsp;'}</span>`).join("");
 
-    nameEl.appendChild(p);
-  }
+  // for (let i = 0; i < text.length; i++) {
+  //   const p = document.createElement("p");
+  //   for (let j = 0; j < text[i].length; j++) {
+  //     const span = document.createElement("span");
+  //     span.textContent = text[i][j];
+  //     span.setAttribute("style", `animation-delay:${totalDelay}s;`);
+  //     totalDelay += DELAY;
+  //     p.appendChild(span);
+  //   }
+
+  //   nameEl.appendChild(p);
+  // }
   return {
     totalDelay,
   };
